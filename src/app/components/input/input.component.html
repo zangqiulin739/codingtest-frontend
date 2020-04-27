@@ -1,0 +1,14 @@
+<div class="container">
+    <form 
+    #phoneNumberForm="ngForm" 
+    class="example-form" 
+    (ngSubmit)="onSubmit(phoneNumberForm)"
+    novalidate>
+        <mat-form-field >
+          <mat-label>Phone Number</mat-label>
+          <input matInput name="number" ngModel required [pattern]="phoneNumberRegex" >
+          <mat-error > Please enter a valid phone number.</mat-error>
+        </mat-form-field>
+        <button mat-stroked-button type="submit" [disabled]="!phoneNumberForm.valid">Send</button>
+    </form>
+</div>
